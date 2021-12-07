@@ -48,6 +48,126 @@
         ><img style="width: 25px; height: 25px" src="image/pokeball.svg" />
         Pokedex</a
       >
+
+      <!-- Button trigger modal -->
+      <a
+        href="#"
+        class="btn btn-primary btn-lg active btn-bottom-right"
+        role="button"
+        aria-pressed="true"
+        data-toggle="modal"
+        data-target="#addPokemonModal"
+        >+</a
+      >
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="addPokemonModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="addPokemonModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addPokemonModalLabel">New Pokemon</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="pokeForm">
+                <div
+                  id="pokeFormFeedBack"
+                  class="alert alert-danger"
+                  role="alert"
+                  style="display: none"
+                ></div>
+                <div class="form-group">
+                  <label for="pokeFormNumber" class="col-form-label"
+                    >Number:</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="pokeFormNumber"
+                    name="number"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="pokeFormName" class="col-form-label">Name:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="pokeFormName"
+                    name="name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="pokeFormDescription" class="col-form-label"
+                    >Description:</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="pokeFormDescription"
+                    name="description"
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="pokeFormTypes">Type:</label>
+                  <select class="form-control" id="pokeFormTypes">
+                    <option>Bug</option>
+                    <option>Electric</option>
+                    <option>Grass</option>
+                    <option>Fire</option>
+                    <option>Flying</option>
+                    <option>Poison</option>
+                    <option>Psychic</option>
+                    <option>Rock</option>
+                    <option>Water</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="pokeFormImageURL" class="col-form-label"
+                    >Image URL:</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="pokeFormImageURL"
+                    name="imageURL"
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                id="pokeFormCloseButton"
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="save(document.getElementById('pokeForm'))"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <form class="form-inline">
         <input
           id="searchInput"
